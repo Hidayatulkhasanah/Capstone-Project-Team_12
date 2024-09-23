@@ -1,5 +1,5 @@
 @extends("admin.components.app")
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 @section('contents')
 <main id="main" class="main">
 <div class="pagetitle">
@@ -46,18 +46,17 @@
                                     @endif
                                 </td>
                                 <td>
+                                    <div class="d-flex">
                                     <a href="{{ route('show_transaksi', ['id' => $show->id]) }}"
-                                        class="btn btn-info btn-sm">
-                                        <i class="fa fa-eye"></i> View
+                                        class="btn btn-info btn-sm me-2" title="View">
+                                        <i class="fa fa-eye"></i>
                                     </a>
-                                    {{-- <a href="{{ route('edit_tour', ['id' => $tour->id]) }}"
-                                        class="btn btn-warning btn-sm">
-                                        <i class="fa fa-pencil"></i> Edit
-                                    </a> --}}
-                                    <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal"
-                                        data-bs-target="#hapusModal{{ $show->id }}">Delete<i
-                                            class="fa fa-trash"></i>
-                                    </button>
+                                    <button type="button" class="btn btn-danger btn-sm" 
+                                    data-bs-toggle="modal" data-bs-target="#hapusModal{{ $show->id }}" 
+                                    title="Delete">
+                                    <i class="fa fa-trash"></i>
+                                </button>
+                            </div>
 
                                     <!-- Modal -->
                                     <div class="modal fade" id="hapusModal{{ $show->id }}" tabindex="-1"

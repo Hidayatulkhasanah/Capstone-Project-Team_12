@@ -37,7 +37,7 @@
                         <div class="row mb-3">
                             <div class="col-lg-12">
                                 <i class="fas fa-globe fa-lg text-primary"></i>
-                                <strong>Destinasi Wisata:</strong> {{ $transaksi->tour->destination }}
+                                <strong>Fasilitas :</strong> {{ $transaksi->tour->destination }}
                             </div>
                         </div>
 
@@ -48,7 +48,7 @@
                             </div>
                         </div>
                         
-                        <div class="row mb-3">
+                        {{-- <div class="row mb-3">
                             <div class="col-lg-6">
                                 <i class="far fa-calendar-alt fa-lg text-primary"></i>
                                 <strong>Tanggal Mulai:</strong> {{ \Carbon\Carbon::parse($transaksi->tour->start_date)->isoFormat('D MMMM YYYY') }}
@@ -57,7 +57,7 @@
                                 <i class="far fa-calendar-alt fa-lg text-primary"></i>
                                 <strong>Tanggal Selesai:</strong> {{ \Carbon\Carbon::parse($transaksi->tour->end_date)->isoFormat('D MMMM YYYY') }}
                             </div>
-                        </div>
+                        </div> --}}
                         <div class="row mb-3">
                             <div class="col-lg-12">
                                 <strong>Status Pembayaran:</strong> 

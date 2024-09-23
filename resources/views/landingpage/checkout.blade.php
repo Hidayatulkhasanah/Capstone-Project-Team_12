@@ -17,7 +17,7 @@ data-client-key="{{ config('midtrans.client_key') }}"></script>
                             <div class="col-lg-6">
                                 <i class="fas fa-user fa-lg text-primary"></i>
                                 <strong>Nama:</strong> {{ $transaksi->name }}
-                            </div>
+                            </div> 
                             <div class="col-lg-6">
                                 <i class="fas fa-envelope fa-lg text-primary"></i>
                                 <strong>Email:</strong> {{ $transaksi->email }}
@@ -47,7 +47,7 @@ data-client-key="{{ config('midtrans.client_key') }}"></script>
                         <div class="row mb-3">
                             <div class="col-lg-12">
                                 <i class="fas fa-globe fa-lg text-primary"></i>
-                                <strong>Destinasi Wisata:</strong> {{ $transaksi->tour->destination }}
+                                <strong>Deskripsi:</strong> {{ $transaksi->tour->destination }}
                             </div>
                         </div>
 
@@ -58,7 +58,7 @@ data-client-key="{{ config('midtrans.client_key') }}"></script>
                             </div>
                         </div>
                         
-                        <div class="row mb-3">
+                        {{-- <div class="row mb-3">
                             <div class="col-lg-6">
                                 <i class="far fa-calendar-alt fa-lg text-primary"></i>
                                 <strong>Tanggal Mulai:</strong> {{ \Carbon\Carbon::parse($transaksi->tour->start_date)->isoFormat('D MMMM YYYY') }}
@@ -67,7 +67,7 @@ data-client-key="{{ config('midtrans.client_key') }}"></script>
                                 <i class="far fa-calendar-alt fa-lg text-primary"></i>
                                 <strong>Tanggal Selesai:</strong> {{ \Carbon\Carbon::parse($transaksi->tour->end_date)->isoFormat('D MMMM YYYY') }}
                             </div>
-                        </div>
+                        </div> --}}
 
                         <div class="text-center mt-4">
                             <button class="btn btn-success btn-lg" id="pay-button">Bayar Sekarang</button>

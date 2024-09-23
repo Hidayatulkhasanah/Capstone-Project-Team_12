@@ -10,7 +10,7 @@
     data-client-key="{{ config('midtrans.client_key') }}"></script>
     <!-- Note: replace with src="https://app.midtrans.com/snap/snap.js" for Production environment -->
 
-    <title>Hafaa Tour & Travel - Beranda</title>
+    <title>Nagara Puntang </title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 

@@ -34,8 +34,6 @@ class TourController extends Controller
             'tour_name' => 'required|string',
             'destination' => 'required|string',
             'image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
-            'start_date' => 'required|date',
-            'end_date' => 'required|date|after:start_date',
             'price' => 'required|numeric',
         ]);
 
@@ -47,8 +45,8 @@ class TourController extends Controller
         $tour->tour_name = $validatedData['tour_name'];
         $tour->destination = $validatedData['destination'];
         $tour->image = $imageName;
-        $tour->start_date = $validatedData['start_date'];
-        $tour->end_date = $validatedData['end_date'];
+        // $tour->start_date = $validatedData['start_date'];
+        // $tour->end_date = $validatedData['end_date'];
         $tour->price = $validatedData['price'];
         $tour->save();
         // dd($tour);
@@ -86,8 +84,6 @@ class TourController extends Controller
             'tour_name' => 'required|string',
             'destination' => 'required|string',
             'image' => 'image|mimes:jpeg,png,jpg|max:2048',
-            'start_date' => 'required|date',
-            'end_date' => 'required|date|after:start_date',
             'price' => 'required|numeric',
         ]);
 

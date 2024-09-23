@@ -11,7 +11,7 @@
                 <div class="carousel-item active" style="background-image: url('{{ asset($imagePath) }}')">
                     <div class="carousel-container">
                         <div class="container">
-                            <h2 class="animate__animated animate__fadeInDown">{{ $tour->destination }}</h2>
+                            
                         </div>
                     </div>
                 </div>
@@ -20,7 +20,7 @@
 
     <div class="destination_banner_wrap overlay py-5">
         <div class="destination_text text-center">
-            <h1>{{ $tour->tour_name }}</h1>
+            <h1 id="tourName">{{ $tour->tour_name }}</h1>
         </div>
     </div>
 
@@ -28,22 +28,15 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8 col-md-9">
-                    <div class="destination_info card mb-4">
-                        <div class="card-body">
-                            <h3 class="card-title">Deskripsi</h3>
-                            <p class="card-text"><strong>Destinasi Wilayah : </strong>{{ $tour->destination }}</p>
-                        </div>
-                    </div>
-
+                    
                     <div class="bordered_1px"></div>
 
                     <div class="destination_info card mb-4">
                         <div class="card-body">
                             <h3 class="card-title">Details</h3>
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item"><strong>Harga:</strong> Rp. {{ $tour->price }}</li>
-                                <li class="list-group-item"><strong>Tanggal Mulai:</strong> {{ \Carbon\Carbon::parse($tour->start_date)->isoFormat('D MMMM YYYY') }}</li>
-                                <li class="list-group-item"><strong>Selesai:</strong>{{ \Carbon\Carbon::parse($tour->end_date)->isoFormat('D MMMM YYYY') }}</li>
+                                <li class="list-group-item"><strong>Harga : </strong> Rp. {{ $tour->price }}</li>
+                                <li class="list-group-item"><strong>Fasilitas : </strong>{{ $tour->destination }}</li>
                             </ul>
                         </div>
                     </div>
@@ -78,14 +71,30 @@
                                         <div class="submit_btn">
                                             <button type="submit" class="btn btn-success">Pesan</button>
                                         </div>
+                                        <div class="submit_btn mt-2">
+                                            <a href="" id="whatsappLink" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Pesan dengan WhatsApp</a>
+                                        </div>
+                                        <div class="submit_btn mt-4">
+                                            <button type="button" onclick="window.history.back();" class="btn btn-secondary">Kembali</button>
+                                        </div>
                                     </div>
                                 </div>
                             </form>
                         </div>
                     </div>
+                    
                 </div>
             </div>
         </div>
     </div>
+
+    <script>
+        document.getElementById('whatsappLink').onclick = function() {
+            var tourName = document.getElementById('tourName').innerText;
+            var whatsappMessage = "Saya ingin memesan " + tourName;
+            var whatsappUrl = "http://wa.me/6289630761046?text=" + encodeURIComponent(whatsappMessage);
+            this.href = whatsappUrl;
+        };
+    </script>
 
 @endsection

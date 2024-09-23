@@ -1,10 +1,11 @@
 @extends('admin.components.app')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
 @section('contents')
 <main id="main" class="main">
     <div class="card">
         <div class="card-body">
-            <h5 class="card-title">Perbarui Data Pengguna</h5>
+            <h5 class="card-title">Perbarui Data Admin</h5>
 
             @if($errors->any())
             <div class="alert alert-danger">
@@ -37,8 +38,8 @@
                     <label for="level" class="col-sm-2 col-form-label">Level</label>
                     <div class="col-sm-10">
                         <select class="form-control" id="level" name="level">
-                            <option value="User" {{ $user->level === 'User' ? 'selected' : '' }}>User</option>
-                            <option value="Admin" {{ $user->level === 'Admin' ? 'selected' : '' }}>Admin</option>
+                            <option selected disabled>level</option>
+                            <option value="Admin" {{ old('level')=='Admin' ? 'selected' : '' }}>Admin</option>
                         </select>
                     </div>
                 </div>

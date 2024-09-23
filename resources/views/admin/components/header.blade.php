@@ -3,7 +3,7 @@
     <div class="d-flex align-items-center justify-content-between">
         <a href="/" class="logo d-flex align-items-center">
             <img src="{{ asset('admin/assets/img/logo.png') }}" alt="">
-            <span class="d-none d-lg-block">HafaaTour</span>
+            <span class="d-none d-lg-block">Nagara Puntang</span>
         </a>
         <i class="bi bi-list toggle-sidebar-btn"></i>
     </div>
@@ -134,7 +134,7 @@
                     <li>
                         <a class="dropdown-item d-flex align-items-center" href="{{ route('logout') }}">
                             <i class="bi bi-box-arrow-right"></i>
-                            <span>Sign Out</span>
+                            <span>Logout</span>
                         </a>
                     </li>
 

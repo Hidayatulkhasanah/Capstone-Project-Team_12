@@ -106,6 +106,7 @@ h6 {
 #header {
   background: #fff;
   transition: all 0.5s;
+  position: relative;
   z-index: 997;
   height: 70px;
   border-bottom: 5px solid #5cb874;

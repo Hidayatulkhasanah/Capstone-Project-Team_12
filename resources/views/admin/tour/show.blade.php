@@ -23,7 +23,7 @@
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <label for="destination" class="col-sm-2 col-form-label">Destinasi</label>
+                    <label for="destination" class="col-sm-2 col-form-label">Fasilitas</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" id="destination" name="destination"
                             value="{{ $tour->destination }}" disabled>
@@ -34,21 +34,6 @@
                     <div class="col-sm-10">
                         <input type="text" class="form-control" id="price" name="price" value="@currency($tour->price)"
                             disabled>
-                    </div>
-                </div>
-
-                 <div class="row mb-3">
-                    <label for="start_date" class="col-sm-2 col-form-label">Tanggal Mulai</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="start_date" name="start_date"
-                            value="{{ \Carbon\Carbon::parse($tour->start_date)->isoFormat('D MMMM YYYY') }}" readonly>
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <label for="end_date" class="col-sm-2 col-form-label">Tanggal Selesai</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="end_date" name="end_date"
-                            value="{{ \Carbon\Carbon::parse($tour->end_date)->isoFormat('D MMMM YYYY') }}" readonly>
                     </div>
                 </div>
                 <div class="text-center mt-4">

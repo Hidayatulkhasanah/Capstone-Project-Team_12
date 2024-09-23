@@ -17,7 +17,7 @@
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <label for="destination" class="col-sm-2 col-form-label">Destinasi</label>
+                    <label for="destination" class="col-sm-2 col-form-label">Deskripsi</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" id="destination" name="destination">
                     </div>
@@ -32,18 +32,6 @@
                     <label for="image" class="col-sm-2 col-form-label">Gambar</label>
                     <div class="col-sm-10">
                         <input class="form-control" type="file" id="image" name="image">
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <label for="start_date" class="col-sm-2 col-form-label">Tanggal Mulai</label>
-                    <div class="col-sm-10">
-                        <input type="date" class="form-control" id="start_date" name="start_date">
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <label for="end_date" class="col-sm-2 col-form-label">Tanggal Selesai</label>
-                    <div class="col-sm-10">
-                        <input type="date" class="form-control" id="end_date" name="end_date">
                     </div>
                 </div>
                 <div class="text-center">

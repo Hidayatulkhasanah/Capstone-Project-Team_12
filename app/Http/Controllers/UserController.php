@@ -76,7 +76,7 @@ class UserController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:users,email,' . $id,
             'level' => 'required|string',
-            'password' => 'nullable|min:8|confirmed',
+            'password' => 'nullable|min:8',
         ]);
 
         $user = User::find($id);

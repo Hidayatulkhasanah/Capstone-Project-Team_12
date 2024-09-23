@@ -1,42 +1,29 @@
 @extends("admin.components.app")
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
 @section('contents')
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>Paket Wisata</h1>
-            {{-- <nav>
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                    <li class="breadcrumb-item active">Data</li>
-                </ol>
-            </nav> --}}
+            <h1>Data Wisata</h1>
         </div><!-- End Page Title -->
-        {{-- <div>
-            <button type="button" class="btn btn-primary mb-3">+ New</button>
-        </div> --}}
-        <a href="{{ route('create_tour') }}" class="btn btn-primary mb-3">+ Tambah Paket    </a>
+
+        <a href="{{ route('create_tour') }}" class="btn btn-primary mb-3">+ Tambah Paket</a>
 
         <section class="section">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-body">
-                            {{-- <h5 class="card-title">Datatables</h5>
-                            <p>Add lightweight datatables to your project with using the <a
-                                    href="https://github.com/fiduswriter/Simple-DataTables" target="_blank">Simple
-                                    DataTables</a> library. Just add <code>.datatable</code> class name to any table you
-                                wish to conver to a datatable</p> --}}
-
-                            <!-- Table with stripped rows -->
                             <table class="table datatable">
                                 <thead>
                                     <tr>
                                         <th scope="col">No</th>
+                                        
+
                                         <th scope="col">Nama</th>
-                                        <th scope="col">Destinasi</th>
+                                        <th scope="col">Fasilitas</th>
                                         <th scope="col">Harga</th>
-                                        <th scope="col">Mulai</th>
                                         <th scope="col">Aksi</th>
                                     </tr>
                                 </thead>
@@ -50,21 +37,23 @@
                                         <td>{{ $tour->tour_name }}</td>
                                         <td>{{ $tour->destination }}</td>
                                         <td>@currency($tour->price)</td>
-                                        <td>{{ \Carbon\Carbon::parse($tour->start_date)->format('j M Y') }}</td>
                                         <td>
-                                            <a href="{{ route('show_tour', ['id' => $tour->id]) }}"
-                                                class="btn btn-info btn-sm">
-                                                <i class="fa fa-eye"></i> View
-                                            </a>
-                                            <a href="{{ route('edit_tour', ['id' => $tour->id]) }}"
-                                                class="btn btn-warning btn-sm">
-                                                <i class="fa fa-pencil"></i> Edit
-                                            </a>
-                                            <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal"
-                                                data-bs-target="#hapusModal{{ $tour->id }}">Delete<i
-                                                    class="fa fa-trash"></i>
-                                            </button>
-
+                                            <div class="d-flex">
+                                                <a href="{{ route('show_tour', ['id' => $tour->id]) }}" 
+                                                    class="btn btn-info btn-sm me-2" title="View">
+                                                    <i class="fa fa-eye"></i>
+                                                </a>
+                                                <a href="{{ route('edit_tour', ['id' => $tour->id]) }}" 
+                                                    class="btn btn-warning btn-sm me-2" title="Edit">
+                                                    <i class="fa fa-pen"></i>
+                                                </a>
+                                                <button type="button" class="btn btn-danger btn-sm" 
+                                                    data-bs-toggle="modal" data-bs-target="#hapusModal{{ $tour->id }}" 
+                                                    title="Delete">
+                                                    <i class="fa fa-trash"></i>
+                                                </button>
+                                            </div>
+                                        
                                             <!-- Modal -->
                                             <div class="modal fade" id="hapusModal{{ $tour->id }}" tabindex="-1"
                                                 aria-labelledby="hapusModalLabel" aria-hidden="true">
@@ -91,7 +80,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </td>
+                                        </td>                                        
                                     </tr>
                                     @endforeach
                                 </tbody>
@@ -99,7 +88,6 @@
                             <!-- End Table with stripped rows -->
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>

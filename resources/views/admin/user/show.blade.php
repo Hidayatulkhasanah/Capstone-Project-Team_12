@@ -4,7 +4,7 @@
 <main id="main" class="main">
     <div class="card">
         <div class="card-body">
-            <h5 class="card-title">Detail Data Pengguna</h5>
+            <h5 class="card-title">Detail Data Admin</h5>
             <form>
                 <div class="row mb-3">
                     <label for="name" class="col-sm-2 col-form-label">Nama</label>
@@ -25,9 +25,9 @@
                 <div class="row mb-3">
                     <label for="level" class="col-sm-2 col-form-label">Level</label>
                     <div class="col-sm-10">
-                        <select class="form-control" id="level" name="level" disabled>
-                            <option value="User" {{ $user->level === 'User' ? 'selected' : '' }}>User</option>
-                            <option value="Admin" {{ $user->level === 'Admin' ? 'selected' : '' }}>Admin</option>
+                        <select class="form-control" id="level" name="level">
+                            <option selected disabled>level</option>
+                            <option value="Admin" {{ old('level')=='Admin' ? 'selected' : '' }}>Admin</option>
                         </select>
                     </div>
                 </div>

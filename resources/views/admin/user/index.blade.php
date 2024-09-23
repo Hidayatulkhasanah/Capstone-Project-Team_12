@@ -1,10 +1,11 @@
 @extends("admin.components.app")
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
 @section('contents')
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>Data Pengguna</h1>
+            <h1>Data Admin</h1>
             {{-- <nav>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.php">Home</a></li>
@@ -47,22 +48,25 @@
                                     <tr>
                                         <th scope="row">{{ $no++ }}</th>
                                         <td>{{ $user->name }}</td>
-                                        <td>{{ $user->email }}</td>
+                                        <td>{{ $user->email }}</td> 
                                         <td>{{ $user->level }}</td>
                                         <td>
-                                            <a href="{{ route('show_user', ['id' => $user->id]) }}"
-                                                class="btn btn-info btn-sm">
-                                                <i class="fa fa-eye"></i> View
-                                            </a>
-                                            <a href="{{ route('edit_user', ['id' => $user->id]) }}"
-                                                class="btn btn-warning btn-sm">
-                                                <i class="fa fa-pencil"></i> Edit
-                                            </a>
-                                            <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal"
-                                                data-bs-target="#hapusModal{{ $user->id }}">Delete<i
-                                                    class="fa fa-trash"></i>
-                                            </button>
-
+                                            <div class="d-flex">
+                                                <a href="{{ route('show_user', ['id' => $user->id]) }}" 
+                                                    class="btn btn-info btn-sm me-2" title="View">
+                                                    <i class="fa fa-eye"></i>
+                                                </a>
+                                                <a href="{{ route('edit_user', ['id' => $user->id]) }}" 
+                                                    class="btn btn-warning btn-sm me-2" title="Edit">
+                                                    <i class="fa fa-pen"></i>
+                                                </a>
+                                                <button type="button" class="btn btn-danger btn-sm" 
+                                                    data-bs-toggle="modal" data-bs-target="#hapusModal{{ $user->id }}" 
+                                                    title="Delete">
+                                                    <i class="fa fa-trash"></i>
+                                                </button>
+                                            </div>
+                                        
                                             <!-- Modal -->
                                             <div class="modal fade" id="hapusModal{{ $user->id }}" tabindex="-1"
                                                 aria-labelledby="hapusModalLabel" aria-hidden="true">

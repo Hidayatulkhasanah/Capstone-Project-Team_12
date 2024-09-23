@@ -13,8 +13,6 @@ class Tour extends Model
         'tour_name',
         'destination',
         'image',
-        'start_date',
-        'end_date',
         'price'
     ];
 

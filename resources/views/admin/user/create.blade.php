@@ -4,7 +4,7 @@
 <main id="main" class="main">
     <div class="card">
         <div class="card-body">
-            <h5 class="card-title">Tambahkan Pengguna Baru</h5>
+            <h5 class="card-title">Tambahkan Admin Baru</h5>
 
             <!-- Display validation errors if any -->
             @if($errors->any())
@@ -37,8 +37,7 @@
                     <label for="level" class="col-sm-2 col-form-label">Level</label>
                     <div class="col-sm-10">
                         <select class="form-control" id="level" name="level">
-                            <option selected>Pilih level pengguna</option>
-                            <option value="User" {{ old('level')=='User' ? 'selected' : '' }}>User</option>
+                            <option selected>level</option>
                             <option value="Admin" {{ old('level')=='Admin' ? 'selected' : '' }}>Admin</option>
                         </select>
                     </div>

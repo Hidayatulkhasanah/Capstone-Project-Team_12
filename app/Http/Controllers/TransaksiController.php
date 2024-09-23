@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 
 class TransaksiController extends Controller
 {
-    public function checkout(Request $request){
+    public function checkout(Request $request)
+    {
         // Contoh menggunakan timestamp dan uniqid
         $nomor_pesanan = 'INV-' . time() . '-' . uniqid();
 
@@ -33,7 +34,7 @@ class TransaksiController extends Controller
                 'first_name' => $request->name,
                 'last_name' => '',
                 'email' => $request->email,
-                
+
             ),
         );
 
@@ -42,23 +43,31 @@ class TransaksiController extends Controller
         return view('landingpage.checkout', compact('snapToken', 'transaksi'));
     }
 
-    public function callback(Request $request){
+    public function callback(Request $request)
+    {
         $serverKey = config('midtrans.server_key');
-        $hashed = hash("sha512", $request->order_id.$request->status_code.$request->gross_amount.$serverKey);
-        if($hashed == $request->signature_key){
-            if($request->transaction_status == 'capture'){
+        $hashed = hash("sha512", $request->order_id . $request->status_code . $request->gross_amount . $serverKey);
+        if ($hashed == $request->signature_key) {
+            if ($request->transaction_status == 'capture') {
                 $transaksi = Transaksi::find($request->order_id);
                 $transaksi->update(['status' => 'paid']);
             }
-        }        
+        }
     }
 
-    public function pemesanan($id){
+    public function pemesanan($id)
+    {
+        // update status transactions
+        Transaksi::where('id', $id)->update([
+            'status' => 'paid',
+        ]);
         $transaksi = Transaksi::find($id);
+
         return view('landingpage.invoice', compact('transaksi'));
     }
-    
-    public function index(){
+
+    public function index()
+    {
         $riwayat = Transaksi::orderBy('created_at', 'DESC')->get();
         return view('admin.transaksi', compact('riwayat'));
     }
@@ -70,7 +79,8 @@ class TransaksiController extends Controller
         return redirect()->route('riwayat')->with('success', 'Transaksi berhasil dihapus');
     }
 
-    public function show($id){
+    public function show($id)
+    {
         $riwayat = Transaksi::find($id);
         return view('admin.transaksiview', compact('riwayat'));
     }
